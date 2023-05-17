@@ -9,11 +9,13 @@
 忽略文件: `.eslintignore`
 
 #### 二、配置 prettier
+
 规则: `.prettierrc.json `
 忽略文件: `.prettierignore `
 **通过 pnpm run lint 去检测语法，如果出现不规范格式,通过 pnpm run fix 修改**
 
 #### 三、配置 stylelint
+
 [stylelint](https://stylelint.io/)为 css 的 lint 工具。
 配置文件: `.stylelintrc.cjs`
 忽略文件: `.stylelintignore `

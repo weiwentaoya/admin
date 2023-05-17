@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import Test from "./components/Test.vue";
-import { Message, Star } from "@element-plus/icons-vue";
+import Test from './components/Test.vue'
+import { Message, Star } from '@element-plus/icons-vue'
 </script>
 
 <style scoped></style>

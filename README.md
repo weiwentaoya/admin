@@ -1,6 +1,6 @@
 # Vue 3 + TypeScript + Vite
 
-### 2.2 项目配置
+### 1 项目配置
 
 #### 一、eslint 配置
 
@@ -24,3 +24,32 @@
 **运行`pnpm run format`的时候，会把代码 格式化**
 
 #### 四、配置 husky
+
+### 2 src 别名的配置
+`vite.config.ts` - *alias*
+`tsconfig.json` - *compilerOptions/paths*
+
+
+### 3 环境变量的配置
+
+```
+.env.development
+.env.production
+.env.test
+```
+
+`变量必须以 VITE_ 为前缀才能暴露给外部读取`
+`通过 import.meta.env 获取环境变量`
+
+### 4 SVG 图标配置
+SVG 全部放在 `src/assets/icons`
+已配置为全剧组件
+
+### 5 全局组件
+`src/components/index.ts`内部可增加全局组建配置
+
+### 6 sass
+
+`src/styles/index.scss` 全局sass入口
+`src/styles/reset.scss` 清除默认样式
+`src/styles/index.scss` 全局变量声明文件$.

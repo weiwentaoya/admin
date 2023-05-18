@@ -3,13 +3,16 @@
     <h1>APP</h1>
     <el-button type="info" :icon="Message" circle />
     <el-button type="warning" :icon="Star" circle />
+    <svg-icon name="welcome" width="600px" height="300px"></svg-icon>
   </div>
-  <Test />
 </template>
 
 <script setup lang="ts">
-import Test from './components/Test.vue'
 import { Message, Star } from '@element-plus/icons-vue'
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+h1 {
+  color: $color;
+}
+</style>

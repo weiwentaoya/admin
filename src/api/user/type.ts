@@ -5,32 +5,48 @@ export interface loginFormData {
 // interface loginDataType {
 //   token: string
 // }
-export interface loginResponseData {
-  // username: string
-  data: string
+export interface responseData {
   message: string
   code: number
   ok: boolean
 }
 
+export interface loginResponseData extends responseData {
+  // username: string
+  data: string
+}
+
 // 用户信息类型
-interface checkUserType {
-  userId: number
-  avatar: string
-  username: string
-  password: string
-  desc: string
-  roles: string[]
-  buttons: string[]
-  routes: string[]
-  token: string
+export interface checkUserType {
+  avatar?: string
+  buttons?: string[]
+  name?: string
+  roles?: string[]
+  routes?: string[]
 }
 
-interface user {
-  checkUser: checkUserType
+export interface userInfoReponseData extends responseData {
+  data: checkUserType
 }
-
-export interface userInfoReponseData {
-  code: number
-  data: user
+export interface menuChildItemType {
+  toCode: string
+  code: string
+  name: string
+}
+export interface menuChildType {
+  buttons: menuChildItemType[]
+  code: string
+  name: string
+}
+export interface menuItemType {
+  children: menuChildType[]
+  code: string
+  name: string
+}
+export interface menuType {
+  menuList?: menuItemType[]
+  permissionList?: string[]
+}
+export interface getMenuReponseData extends responseData {
+  data: menuType
 }

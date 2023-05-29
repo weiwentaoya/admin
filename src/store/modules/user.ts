@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import { ref, onMounted } from 'vue'
-import type { loginFormData } from '@/api/user/type'
+import { ref, Ref } from 'vue'
+import type { loginFormData, checkUserType } from '@/api/user/type'
 import { reqLogin, reqUserInfo } from '@/api/user'
 import { useRouter } from 'vue-router'
 
@@ -13,17 +13,20 @@ export const useUserStore = defineStore('user', () => {
     const res = await reqLogin(params)
     token.value = res.data
     localStorage.setItem('token', res.data)
+    getUserInfo()
     router.push('/')
-    console.log(res)
   }
-  const userInfo = ref({})
+
+  const userInfo: Ref<checkUserType> = ref({})
   const getUserInfo = async () => {
+    if (userInfo.value.name) return
     const res = await reqUserInfo()
+    if (!res.data) {
+      return router.replace('/login')
+    }
+    userInfo.value = res.data
     console.log(res.data)
   }
 
   return { token, userLogin, userInfo, getUserInfo }
-})
-onMounted(() => {
-  useUserStore().getUserInfo()
 })

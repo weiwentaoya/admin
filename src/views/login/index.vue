@@ -36,24 +36,24 @@ const onSubmit = () => {
 }
 </script>
 
-<style scoped sass>
+<style scoped lang="scss">
 .login-page__wrap {
   background-color: #2d3a4b;
   height: 100vh;
   overflow: hidden;
-}
-.login-form__wrap {
-  width: 400px;
-  margin: 200px auto;
-}
-h1 {
-  font-size: 18px;
-  line-height: 108px;
-  text-align: center;
-  color: #fff;
-}
-.el-button {
-  margin-top: 12px;
-  width: 100%;
+  .login-form__wrap {
+    width: 400px;
+    margin: 200px auto;
+    h1 {
+      font-size: 18px;
+      line-height: 108px;
+      text-align: center;
+      color: #fff;
+    }
+    .el-button {
+      margin-top: 12px;
+      width: 100%;
+    }
+  }
 }
 </style>
